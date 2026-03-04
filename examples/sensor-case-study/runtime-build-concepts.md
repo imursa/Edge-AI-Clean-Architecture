@@ -40,4 +40,10 @@ Conceptual guide to produce a small, robust runtime for Raspberry Pi.
 
 ## Packaging pattern
 
-Place in `/app`:
+Place in `/app`:inference_engine   # static binary
+model.onnx
+config.json
+
+Treat the runtime like firmware; version it separately from the model.
+
+
