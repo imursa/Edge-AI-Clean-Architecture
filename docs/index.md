@@ -13,6 +13,10 @@ Use the navigation links below to explore the architecture, design notes, and ex
 - Pipeline Diagram
 - Runtime Stack Diagram
 
+## 📄 Downloadable PDFs
+
+- Edge AI Clean Architecture (with diagram)
+
 ### Design
 - Clean Architecture
 - Model Lifecycle
