@@ -1,13 +1,23 @@
-Train (PyTorch/TF)
-   ↓
-Export to ONNX
-   ↓
-Optimize ONNX
-   ↓
-Compile ONNX Runtime Minimal (static, ARM)
-   ↓
-Package model + runtime
-──────────────────────────────────────────
-Deploy to Raspberry Pi
-──────────────────────────────────────────
-Sensor → Preprocess → Inference → Logic
+# Clean Architecture (layers)
+
++--------------------------------------------------+
+|           Workstation (Train + Build)            |
+|                                                  |
+|  [PyTorch/TF] --> [ONNX export] --> [ONNX opt]   |
+|                            |                     |
+|                   [ORT Minimal build]            |
+|                            |                     |
+|                   [Static binary + model]        |
++----------------------------|---------------------+
+                             |
+                             v
++--------------------------------------------------+
+|            Raspberry Pi (Inference Only)         |
+|                                                  |
+|   /app                                           |
+|     - inference_engine  (static)                 |
+|     - model.onnx                                 |
+|     - config.json                                |
+|                                                  |
+|  Sensor -> Preproc -> inference_engine -> Logic  |
++--------------------------------------------------+
