@@ -2,15 +2,15 @@ Architecture Overview
 This document summarizes the full clean architecture for edge AI inference.
 High-Level Pipeline
 
-Train (PyTorch/TF)
-   ↓
-Export to ONNX
-   ↓
-Optimize ONNX
-   ↓
-Compile ONNX Runtime Minimal (static, ARM)
-   ↓
-Package model + runtime
+   Train (PyTorch/TF)
+      ↓
+   Export to ONNX
+      ↓
+   Optimize ONNX
+      ↓
+   Compile ONNX Runtime Minimal (static, ARM)
+      ↓
+   Package model + runtime
 ──────────────────────────────────────────
 Deploy to Raspberry Pi
 ──────────────────────────────────────────
