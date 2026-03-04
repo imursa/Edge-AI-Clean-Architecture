@@ -1,1 +1,7 @@
-
+High-Level ML Framework (PyTorch, TF)
+                       ↓
+                Export to ONNX
+                       ↓
+          Minimal Inference Runtime (static)
+                       ↓
+                     ARM CPU
