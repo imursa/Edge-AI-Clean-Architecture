@@ -1,1 +1,6 @@
+/app
+ ├── inference_engine
+ ├── model.onnx
+ └── config.json
 
+Sensor → Preprocess → inference_engine → Decision
