@@ -1,6 +1,18 @@
-/app
- ├── inference_engine
- ├── model.onnx
- └── config.json
+# End-to-end Pipeline (conceptual)
 
-Sensor → Preprocess → inference_engine → Decision
+Train (PyTorch/TF)
+   |
+   v
+Export to ONNX  --->  (Optional) Simplify/Optimise
+   |
+   v
+Compile ONNX Runtime Minimal (ARMv7/v8 + NEON, static)
+   |
+   v
+Package runtime + model + config
+   |
+   v
+================= DEPLOY TO DEVICE =================
+   |
+   v
+Sensor --> Preprocess --> inference_engine --> Result --> Decision
