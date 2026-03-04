@@ -1,7 +1,16 @@
 # Edge-AI-Clean-Architecture
-A reference architecture for deploying AI models on edge devices (e.g., Raspberry Pi) using minimal dependencies, static inference runtimes, and model-first design. This repo captures the core principles, diagrams, and conceptual pipeline for robust edge AI deployments.
-What This Repo Covers
+This repository captures the core principles, architecture patterns, and conceptual pipeline required to deploy machine learning models on edge devices (e.g., Raspberry Pi) without dependency hell.
+It is designed as a durable reference:
 
+No code required
+Fully conceptual
+Minimal moving parts
+Model-first, runtime-second
+Python-free edge inference
+
+The goal is future readability, not immediate deployment.
+
+What This Repo Covers
 Why dependency hell happens in AI (hardware, OS, linking, Python wheels)
 Why Raspberry Pi makes it worse
 What an inference runtime is and why it solves 80–90% of the problem
