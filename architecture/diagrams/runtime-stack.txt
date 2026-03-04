@@ -1,7 +1,9 @@
-High-Level ML Framework (PyTorch, TF)
-                       ↓
-                Export to ONNX
-                       ↓
-          Minimal Inference Runtime (static)
-                       ↓
-                     ARM CPU
+# Runtime Stack (inference only)
+
+[ Model (ONNX) ]
+        |
+        v
+[ Minimal Inference Runtime ]  <-- statically linked; ARM + NEON
+        |
+        v
+[ ARM CPU ]  <-- Raspberry Pi (no GPU dependency)
