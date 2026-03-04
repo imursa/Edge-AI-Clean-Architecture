@@ -48,4 +48,38 @@ Document precisely in `config.json` (scales, window length).
 
 ## On-device layout
 
+/app
+├─ inference_engine
+├─ model.onnx
+└─ config.json
+
+---
+
+## Decision logic
+
+- Threshold on anomaly score (e.g., > 0.7 → alarm).
+- Hysteresis to avoid chatter.
+- Log events and last N windows for diagnostics.
+
+---
+
+## Validation checklist
+
+- Compare ONNX output vs training framework on test windows.
+- Confirm latency (e.g., < 10 ms per window).
+- Confirm memory footprint stable under long runs.
+- Smoke test with known normal/abnormal patterns.
+
+---
+
+## Versioning
+
+- `model_vX.Y.onnx`
+- `config_vA.B.json`
+- `runtime vR.S` (rare updates; treat as firmware)
+
+- 
+
+
+
 
