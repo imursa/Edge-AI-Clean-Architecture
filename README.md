@@ -1,6 +1,6 @@
 # Edge-AI-Clean-Architecture
 This repository captures the core principles, architecture patterns, and conceptual pipeline required to deploy machine learning models on edge devices (e.g., Raspberry Pi) without dependency hell.
-It is designed as a durable reference:
+It is designed as a durable reference: 
 
 No code required
 Fully conceptual
