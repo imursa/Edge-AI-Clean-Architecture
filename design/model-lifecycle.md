@@ -46,6 +46,37 @@ A practical flow to control change and preserve stability.
 - If new model fails validation or drifts, switch symlink/file name back.
 - Runtime updates are rare; treat them like firmware with staged rollout.
 
+- -----
+**Principles**
+- Update **models** frequently; **runtime** rarely.
+- Devices run offline if needed (local autonomy).
+- Events published via MQTT/HTTP; inference never depends on the network.
+
+---
+
+## Rollout strategy
+
+- **Canary** few devices first.
+- **Staged** rollout across batches.
+- **Rollback** by switching model symlink or filename.
+- Record device → model → config mapping for traceability.
+
+---
+
+## Observability
+
+- Minimal: inference latency, output score, sensor health flags.
+- Optional: gateway aggregates and visualises.
+- Avoid heavy agents on the Pi.
+
+---
+
+## Security & integrity
+
+- Sign model files if required.
+- Validate file hashes prior to activation.
+- Run the binary with least privileges.
+
 ---
 
 ## Reproducibility
