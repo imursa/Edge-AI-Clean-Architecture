@@ -1,34 +1,21 @@
-Architecture Overview
-This document summarizes the full clean architecture for edge AI inference.
-High-Level Pipeline
+# Architecture Overview
 
-   Train (PyTorch/TF)
-      ↓
-   Export to ONNX
-      ↓
-   Optimize ONNX
-      ↓
-   Compile ONNX Runtime Minimal (static, ARM)
-      ↓
-   Package model + runtime
-──────────────────────────────────────────
-Deploy to Raspberry Pi
-──────────────────────────────────────────
-Sensor → Preprocess → Inference → Logic
+This document summarises the clean, first‑principles architecture for **edge AI inference**.
 
-Philosophy
+---
 
-Everything complex happens on the workstation
-The Raspberry Pi is treated as an appliance
-Use static binaries to avoid dependency hell
-Python is excluded from deployment
-Model + runtime = entire system
+## Principles
 
-Artifacts on the Pi
-/app
-   inference_engine  (static C++ binary)
-   model.onnx
-   config.json
+1. **Model-first**: Use a portable IR (e.g., ONNX).  
+2. **Tiny runtime**: Inference-only engine, compiled for ARM + NEON.  
+3. **Static linking**: Avoid dynamic `.so` dependencies on device.  
+4. **Python-free device**: No wheels, no pip, no virtualenv.  
+5. **Immutable artifact**: One binary + one model file.  
+6. **Reproducible builds**: Rebuild off-device; deploy identical outputs.
+
+---
+
+## End-to-end pipeline
 
 
 
