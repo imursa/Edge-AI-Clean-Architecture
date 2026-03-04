@@ -1,29 +1,30 @@
-# Edge-AI-Clean-Architecture
-This repository captures the core principles, architecture patterns, and conceptual pipeline required to deploy machine learning models on edge devices (e.g., Raspberry Pi) without dependency hell.
-It is designed as a durable reference: 
+# Edge AI Clean Architecture (Sensor-Focused Blueprint)
 
-No code required
-Fully conceptual
-Minimal moving parts
-Model-first, runtime-second
-Python-free edge inference
+This repository captures the core principles, patterns, and workflow to deploy machine learning models on edge devices (e.g., Raspberry Pi) **without dependency hell**.
 
-The goal is future readability, not immediate deployment.
+> **Purpose:** a durable, conceptual reference.  
+> **Scope:** no runtime code, just architecture, diagrams, and decision guides.  
+> **Outcome:** confidence in constraints, trade-offs, and a clean deployment path.
 
-What This Repo Covers
+---
 
-Why dependency hell happens in AI (hardware, OS, linking, Python wheels)
-Why Raspberry Pi makes it worse
-What an inference runtime is and why it solves 80–90% of the problem
-Clean architecture for edge AI deployments
-A fully worked, real-world sensor intelligence case study
-Scalable multi-device architecture (Pi fleets)
+## Why this exists
 
-Repo Structure
+AI frameworks (PyTorch, TensorFlow) are large, fast‑moving, and tightly coupled to native libraries. Edge devices (ARM, older glibc, tiny RAM) make this worse. The cure is a **clean, inference‑only architecture**:
 
-See /architecture, /design, and /examples for focused breakdowns.
+- Train off-device → export to a stable **IR** (e.g., ONNX).
+- Use a small **inference runtime** (e.g., ONNX Runtime Minimal).
+- Ship a **static binary** + **model file** only.
+- Avoid Python, wheels, and dynamic linking on the device.
 
-Status
+---
 
-This repo is a blueprint and conceptual guide.
-You can expand it with code or tutorials in the future, but the architecture remains clean and stable.
+## What you’ll find
+
+- **/architecture** — diagrams, overview, glossary.
+- **/design** — clean architecture, lifecycle, runtime selection, deployment patterns.
+- **/examples/sensor-case-study** — a worked example (vibration anomaly detection).
+
+---
+
+## High-level pipeline
