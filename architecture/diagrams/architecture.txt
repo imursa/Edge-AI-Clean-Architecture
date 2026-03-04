@@ -1,1 +1,13 @@
-
+Train (PyTorch/TF)
+   ↓
+Export to ONNX
+   ↓
+Optimize ONNX
+   ↓
+Compile ONNX Runtime Minimal (static, ARM)
+   ↓
+Package model + runtime
+──────────────────────────────────────────
+Deploy to Raspberry Pi
+──────────────────────────────────────────
+Sensor → Preprocess → Inference → Logic
